@@ -1,0 +1,66 @@
+
+
+.main-frame{
+    background-color: rgb(248, 223, 156);
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+header{
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 60px;
+padding: 5px 20px;
+}
+header img{
+    height: 0px;
+}
+
+header .ant-input{
+    height: 40px;
+    border-radius: 20px;
+    border-color:rgb(248, 223, 156) ;
+    background-color: rgb(255, 244, 212);
+    border-width: 1px;
+    width: 400px;
+    padding: 5px;
+
+
+}
+header .ant-btn{
+    background-color: rgb(223, 174, 28);;
+    border-radius: 10px;
+    font-size: 1rem;
+    border: none;
+    height: 40px;
+    padding: 7px;
+    color: white;
+}
+
+header button img{
+    height: 20px;
+    margin-left: 10px;
+}
+
+
+.sub-frame{
+    height: 20rem;
+    background-color: rgb(255, 244, 212);
+}
+
+.item-frame{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    border-bottom: 1px solid grey;
+}
+
+.item-frame img{
+    height: 20px;
+}
+.item-frame p{
+    color: grey;
+    font-size: large;
+}
