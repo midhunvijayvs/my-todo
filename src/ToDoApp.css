@@ -25,11 +25,11 @@ header .ant-input{
     background-color: rgb(255, 244, 212);
     border-width: 1px;
     width: 400px;
-    padding: 5px;
+    padding: 10px;
 
 
 }
-header .ant-btn{
+header button{
     background-color: rgb(223, 174, 28);;
     border-radius: 10px;
     font-size: 1rem;
@@ -38,10 +38,12 @@ header .ant-btn{
     padding: 7px;
     color: white;
 }
-
+header button :hover{
+    background-color: yellow;
+}
 header button img{
-    height: 20px;
-    margin-left: 10px;
+    height: 10px;
+    margin-left: 5px;
 }
 
 

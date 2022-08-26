@@ -34,7 +34,7 @@ const Item=(props)=> {
     });    
 
   };
-  const [myId, setmyId] = useState(0);
+  
 
 
   return (

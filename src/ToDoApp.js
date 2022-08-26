@@ -10,8 +10,6 @@ import { addTodos } from './redux/reducer';
 import Item from './Item';
 
 
-
-
 const mapStateToProps = (state) => {
   return {
     todos: state,
@@ -57,7 +55,7 @@ const ToDoApp = (props) => {
           onChange={(e) => inputChanged(e)}
           className="todo-input"
           value={todo}></Input>
-        <Button onClick={() => addItem()}>Add<img src={addIcon} alt='icon'></img></Button>
+        <button onClick={() => addItem()}>Add<img src={addIcon} alt='icon'></img></button>
       </header>
       <div className='sub-frame'>
         <div>
