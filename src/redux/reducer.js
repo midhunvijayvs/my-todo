@@ -8,16 +8,22 @@ const addTodoReducer = createSlice({
   initialState,
   
   reducers: {
-    //here we will write our reducer
-    //Adding todos
+   
     addTodos: (state, action) => {
       state.push(action.payload);
       return state;
     },
+
+    deleteToDos: (state, action) => {
+      state.splice(action.payload.id,1);
+      return state;
+    }
    
   },
   
 });
 
-export const { addTodos } = addTodoReducer.actions;
+export const { addTodos, deleteToDos } = addTodoReducer.actions;
 export const reducer = addTodoReducer.reducer;
+
+

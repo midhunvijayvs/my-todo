@@ -3,8 +3,8 @@ import './ToDoApp.css';
 import addIcon from './icons/add-icon.png'
 import logoIcon from './icons/logo.png'
 import 'antd/dist/antd.css';
-import {Button, Input } from 'antd';
-import  { useState } from "react";
+import { Button, Input } from 'antd';
+import { useState } from "react";
 import { connect } from "react-redux";
 import { addTodos } from './redux/reducer';
 import Item from './Item';
@@ -22,20 +22,21 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     addTodo: (obj) => dispatch(addTodos(obj)),
+
   };
 };
 
 
-const ToDoApp=(props)=> {
-  console.log( 'props of ToDoApp',props)
+const ToDoApp = (props) => {
+  console.log('props of ToDoApp', props)
   const [todo, setTodo] = useState("");
 
-  const add = () => {
+  const addItem = () => {
     if (todo === "") {
       alert("Input is Empty");
     } else {
       props.addTodo({
-        id: Math.floor(Math.random() * 1000),
+        id: props.todos.length,
         item: todo,
         completed: false,
       });
@@ -43,36 +44,36 @@ const ToDoApp=(props)=> {
     }
   };
 
-  const handleChange = (e) => {
+
+  const inputChanged = (e) => {
     setTodo(e.target.value);
   };
-  
+
   return (
     <div className='main-frame'>
-        <header>
-          <img src={logoIcon} className="App-logo" alt="logo" />
-          <Input size="large" placeholder="Enter the ToDo item here.."type="text"
-          onChange={(e) => handleChange(e)}
+      <header>
+        <img src={logoIcon} className="App-logo" alt="logo" />
+        <Input size="large" placeholder="Enter the ToDo item here.." type="text"
+          onChange={(e) => inputChanged(e)}
           className="todo-input"
           value={todo}></Input>
-          <Button onClick={() => add()}>Add<img src={addIcon}></img></Button>
-        </header>
-    <div className='sub-frame'>
-    <div>
-        {props.todos.length > 0 &&
-          props.todos.map((item) => {
-            return (
-            <div>
-              
-            <Item text={item.item}></Item>
-            </div>)
-          })}
+        <Button onClick={() => addItem()}>Add<img src={addIcon} alt='icon'></img></Button>
+      </header>
+      <div className='sub-frame'>
+        <div>
+          {props.todos.length > 0 &&
+            props.todos.map((item, key) => {
+              return (
+                <div>
+                  <Item text={item.item} id={key}></Item>
+                </div>)
+            })}
+        </div>
       </div>
     </div>
-    </div>
-    
-    
-    
+
+
+
   );
 }
 

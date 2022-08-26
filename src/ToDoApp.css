@@ -54,7 +54,7 @@ header button img{
     display: flex;
     justify-content: space-around;
     padding: 20px;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid rgb(243, 203, 117);
 }
 
 .item-frame img{
@@ -63,4 +63,5 @@ header button img{
 .item-frame p{
     color: grey;
     font-size: large;
+    width: 80%;
 }
